@@ -1,0 +1,113 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('/img_data/login.jpg'); /* Background image */
+    background-size: cover;            /* Ensure the image covers the entire viewport */
+    background-repeat: no-repeat;      /* Prevent tiling of the background image */
+    background-position: center;       /* Centers the image */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    position: relative; /* Needed for ::before positioning */
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Black overlay with 50% transparency */
+    z-index: -1; /* Ensures overlay stays behind content */
+}
+
+.signup-container, .login-container {
+    padding: 20px;
+    text-align: left; /* Center-align the content */
+    color: white; /* White text for better contrast over the dark overlay */
+    width: 100%;
+    max-width: 400px;
+    background-color: rgba(0, 0, 0, 0.352);
+    border-radius: 15px;
+}
+
+/* Sign Up Page Styling */
+.signup-container h2 {
+    margin-bottom: 20px;
+    color: goldenrod; /* Gold color for heading */
+}
+
+.signup-container .form-group button {
+    background-color: goldenrod; /* Gold button background */
+    color: white; /* White text for contrast */
+}
+
+.signup-container .form-group button:hover {
+    background-color: #d4af37; /* Slightly darker gold on hover */
+}
+
+/* Login Page Styling */
+.login-container h2 {
+    margin-bottom: 20px;
+    color: goldenrod; /* Gold color for heading */
+}
+
+.login-container .form-group button {
+    background-color: goldenrod; /* Gold button background */
+    color: white; /* White text for contrast */
+}
+
+.login-container .form-group button:hover {
+    background-color: #d4af37; /* Slightly darker gold on hover */
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: white; /* White text for better contrast */
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: rgb(243, 234, 234); /* Transparent white background */
+    color: white; /* White text */
+}
+
+.form-group input:focus {
+    border-color: rgb(255, 255, 255); /* Gold border on focus */
+    outline: none;
+}
+
+.form-group button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.form-group a {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    color: rgb(255, 255, 255); /* Gold link color */
+    text-decoration: none;
+}
+
+.form-group a:hover {
+    text-decoration: underline;
+}
+#email, #username,#password, #phone,#address{
+    color: black;
+}

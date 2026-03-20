@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/check.css">
+</head>
+<body>
+    <nav id="navbar">
+        <span class="logo">
+        <img class="lg" src="/img_data/logo3.jpg" height="40" width="40" alt="Logo"/>
+        <p class="lg">Cinematic Vision</p>
+        </span>
+        <div class="loca">
+            <p class="text"><a href="/">Home</a></p>
+            <p class="text"><a href="/category">Category</a></p>
+            <p class="text"><a href="/about">About us</a></p>
+            <p class="text"><a href="/cart">Cart</a></p>
+            <p class="text"><a href="/user"><img src="/img_data/user.PNG" height="25px" width="25px"></a></p>
+            <% if(found ==0){ %>
+                <div class="text"><a href="/login"><button>Login</button></a></div>
+           <% }else{ %>
+                <div class="text"><a href="/logout"><button>Logout</button></a></div>
+           <% } %>      
+        </div>
+    </nav>
+    <div class="main">
+          <div class="ctext">Confirm your Order Details</div>
+          <form id="check" method="post" action="/check">
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your Email Id" required>
+                <label for="tel"><strong>Contact:</strong></label>
+                <input type="tel" id="tel" name="tel" placeholder="Enter your contact number" required>
+            </div>
+
+            <div class="form-group">
+                <label for="address"><strong>Address:</strong></label>
+                <textarea id="address" name="address" placeholder="Enter your address" required></textarea>
+            </div>
+            <input type="submit" value="Proceed to Pay" name="pay" id="pay">
+            
+        </form >
+         
+         <div class="tab">
+            <table>
+                <thead>
+                    <th>Products</th>
+                    <th>Quantity</th>
+                    <th>Rental Days</th>
+                    <th>Price</th>
+                </thead>
+                <tbody>
+                    <% for(let item of cart) { %>
+                    <tr>
+                        <td><%= item.name %></td>
+                        <td><%= item.quantity %></td>
+                        <td><%= item.days %></td>
+                        <td><%= item.rent %></td>
+                    </tr>
+                    <% } %>
+
+                    <tfoot>
+                        <tr><td>Total : <%= total %></td></tr>
+                    </tfoot>
+                </tbody>
+
+            </table>
+    
+
+         </div>
+
+    </div>
+
+</body>
+</html>

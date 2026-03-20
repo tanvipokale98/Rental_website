@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/feedback.css">
+</head>
+<body>
+
+<div class="main">
+    <div>
+        <div class="merge"><div class="text">Feedback & Requirements</div>
+                  <div class="text"><a href="/track"><button>Track Orders</button></a> </div>
+                </div>
+        
+        
+    <% orders.forEach(order => { %>  
+        <div class="order-container">
+<div class="order-details">
+        <div>Customer Id: <%= order.customer_id %></div>
+        <div>Customer Name: <%= order.username %></div>
+        <div>Email: <%= order.email %></div>
+        <div>Address: <%= order.address %></div>
+        <div>Contact: <%= order.contact %></div>
+        <div>Date: <%= order.date %></div>
+        </div>
+        <div class="feed">
+            <div>Feedback:</div>
+            <div><%= order.feedback %></div>
+            <form action="/feedback/<%= order.feedback_id %>" method="POST">
+                <button type="submit">Mark as Read</button>
+            </form>
+        </div>
+        </div>
+        <% }); %>
+    </div>
+</div>
+
+</body>
+</html>

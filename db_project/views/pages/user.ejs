@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile</title>
+    <link rel="stylesheet" href="/css/profile.css">
+</head>
+<body>
+    <div class="nv"><nav id="navbar">
+        <span class="logo">
+        <img class="lg" src="/img_data/logo3.jpg" height="40" width="40" alt="Logo"/>
+        <p class="lg">Cinematic Vision</p>
+        </span>
+        <div class="loca">
+            <p class="text"><a href="/">Home</a></p>
+            <p class="text"><a href="/category">Category</a></p>
+            <p class="text"><a href="/about">About us</a></p>
+            <p class="text"><a href="/cart">Cart</a></p>
+            <p class="text"><a href="/user"><img src="/img_data/user.PNG" height="25px" width="25px"></a></p>
+            <% if(found ==0){ %>
+                <div class="text"><a href="/login"><button>Login</button></a></div>
+           <% }else{ %>
+                <div class="text"><a href="/logout"><button>Logout</button></a></div>
+           <% } %>      
+        </div>
+    </nav>
+</div>
+    
+    <div class="header">
+        <p>My Profile</p>
+    </div>
+    <% if (result.length > 0) { %>
+    <section class="profile-section">
+        <div class="profile-details">
+            <div class="profile-info">
+                <!-- <% if (result.length > 0) { %> -->
+                    <p>Name: <%= result[0].username %></p>
+                    <p>Contact: <%= result[0].phone %></p>
+                    <p>Email: <%= result[0].email %></p>
+                    <p>Location: <%= result[0].address %></p>
+                <!-- <% } else{ %>
+                    <p>No user Found</p>
+               <% } %> -->
+            </div>
+        </div>
+    </section>
+
+    <section class="purchase-history">
+        <h2>Purchase History</h2>
+        <div class="details">
+            <% orders.forEach(order => { %>  
+                <div class="order-container">
+        <div class="order-details">
+                <div class="info">Order id: <%= order.order_id %></div>
+                <div class="info">Address: <%= order.address %></div>
+                <div class="info">Contact: <%= order.contact %></div>
+                <div class="info">Total Price: <%= order.total_price %> </div>
+                <div class="info">Date & Time: <%= order.time %> </div>
+                <div class="info">Status: <%= order.reason %> </div>
+                <div>
+                    <table>
+                        <thead>
+                            <th>Product Name</th>
+                            <th>Rental Days</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                        </thead>
+                        <tbody>
+                            <% order.items.forEach(item => { %>
+                                <tr>
+                                    <td><%= item.product_name %></td>
+                                    <td><%= item.rental_days %></td>
+                                    <td><%= item.quantity %></td>
+                                    <td><%= item.price %></td>
+                                </tr>
+                            <% }); %>
+                        </tbody>
+                    </table>
+                </div></div>
+                </div>
+                <% }); %>
+        </div>
+    </section>
+    <% } else{ %>
+        <p class="err">No user Found</p>
+   <% } %>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/track.css">
+</head>
+<body>
+
+<div class="main">
+    <div>
+        <div class="merge"><div class="text">Track Orders</div>
+        <div class="text"><a href="/feedback"><button>Feedbacks</button></a> </div>
+      </div>
+    <% orders.forEach(order => { %>  
+        <div class="order-container">
+<div class="order-details">
+        <div>Order id: <%= order.order_id %></div>
+        <div>Customer Id: <%= order.customer_id %></div>
+        <div>Address: <%= order.address %></div>
+        <div>Contact: <%= order.contact %></div>
+        <div>Transaction ID: <%= order.transaction %> </div>
+        <div>
+            <table>
+                <thead>
+                    <th>Product Name</th>
+                    <th>Rental Days</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                </thead>
+                <tbody>
+                    <% order.items.forEach(item => { %>
+                        <tr>
+                            <td><%= item.product_name %></td>
+                            <td><%= item.rental_days %></td>
+                            <td><%= item.quantity %></td>
+                            <td><%= item.price %></td>
+                        </tr>
+                    <% }); %>
+                </tbody>
+                <tfoot><td rowspan="<%= order.items.length %>"><%= order.total_price %>
+                    
+                        <form action="/track/<%= order.order_id %>" method="POST">
+                            <button type="submit">Mark as Shipped</button>
+                        </form>
+                        <form action="/tracki/<%= order.order_id %>" method="POST">
+                            <button type="submit">Transaction id does not Match</button>
+                        </form>
+                        <form action="/track2/<%= order.order_id %>" method="POST">
+                            <button type="submit">Full amount not paid</button>
+                        </form>
+                    </td></tfoot>
+            </table>
+        </div></div>
+        </div>
+        <% }); %>
+    </div>
+</div>
+
+</body>
+</html>

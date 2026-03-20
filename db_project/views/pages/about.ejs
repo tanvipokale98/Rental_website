@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./logo2.png?v=1" type="image/x-icon">
+    <link rel="stylesheet" href="/css/abt.css">
+    <title>Document</title>
+</head>
+<body>
+   <div class="main">
+    <nav id="navbar">
+      <span class="logo">
+      <img class="lg" src="/img_data/logo3.jpg" height="40" width="40" alt="Logo"/>
+      <p class="lg">Cinematic Vision</p>
+      </span>
+      <div class="loca">
+          <p class="text"><a href="/">Home</a></p>
+          <p class="text"><a href="/category">Category</a></p>
+          <p class="text"><a href="/about">About us</a></p>
+          <p class="text"><a href="/cart">Cart</a></p>
+          <p class="text"><a href="/user"><img src="/img_data/user.PNG" height="25px" width="25px"></a></p>
+          <% if(found ==0){ %>
+              <div class="text"><a href="/login"><button>Login</button></a></div>
+         <% }else{ %>
+              <div class="text"><a href="/logout"><button>Logout</button></a></div>
+         <% } %>      
+      </div>
+  </nav>
+    <div class="about">
+        <div class="text"><span>ABOUT US</span></div>
+         <div class="subtext">
+              <span>
+                "Capture Your Vision with Us!"
+At Cinematic Vision, we believe every filmmaker, photographer, and creative deserves access to the best tools, no matter the project size. Whether you're looking to rent professional cameras and filmmaking gear for a few days or invest in owning top-notch equipment, we've got you covered. Our mission is to empower your creativity with affordable solutions, unparalleled quality, and expert support. Let us help bring your vision to life—one frame at a time!
+              </span>
+         </div>
+    </div>
+    <section>
+    <div class="require">
+      <div class="details">
+           <div class="cont"><span>CONTACT US</span></div>
+           <div class="cont_d"><span> Lets Us know Your Requirements!</span></div>
+           <!-- <div class="social">
+            <div class="phone">
+                <img src="/img_data/email.webp" height="30px" width="=30px">
+                <div class="email"><p>cinematicvision2525@gmail.com</p>
+            <p>dkumar14771@gmail.com</p></div>
+            </div>
+           <div class="phone">
+            <img src="/img_data/phone1.png" height="30px" width="30px">
+             <p>+919511199155</p>
+           </div>
+          </div> -->
+
+          <div class="social">
+           
+            <form id="require" method="post" action="/require">
+               <label for="story">Enter Your Feedack and Requirements</label><br/>
+              <textarea id="story" name="story"></textarea>
+              <input type="submit" value="Submit" id="submit" name="submit">
+            </form>
+          </div>
+          <div class="ad">
+        <span class="addre">ADDRESS</span>
+        <ul class="add">
+            <li>Anand Housing Society, Sahunagar Satara</li>
+            <li>229/1826, road no 5, motilal nagar, goregaon west , mumbai 400104</li>
+        </ul>
+      </div>
+      </div>  
+      <div class="imgg">
+        <img src="/img_data/back18.jpeg" height="329px" width="413px" >
+
+      </div>
+    </div>
+</section>
+   </div>
+   
+   <div class="foot">
+    <footer>
+        <div class="links">
+            <div class="lik">Links</div>
+             <p class="pg"><a  href="/">Home</a></p>
+             <p class="pg"><a  href="/category">Category</a></p>
+             <p class="pg"><a  href="/about">About Us</a></p>
+            </div>
+        
+      <div class="social">
+        <div class="lik">Socials</div>
+        <div class="phone">
+            <img src="/img_data/email.webp" height="40px" width="=40px">
+            <div class="email"><p>cinematicvision2525@gmail.com</p>
+        <p>dkumar14771@gmail.com</p></div>
+        </div>
+       <div class="phone">
+        <img src="/img_data/phone1.png" height="40px" width="40px">
+         <p>+919511199155</p>
+       </div>
+      </div>
+      <div class="social">
+            <div class="lik">Location</div>
+            <div class="location">
+                <div class="locat1">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d17126.913929335777!2d73.99864713462479!3d17.681622252099807!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc239004429a4a3%3A0x686f23dc611e6b57!2sAnand%20row%20house!5e0!3m2!1sen!2sin!4v1737271613339!5m2!1sen!2sin" width="250" height="150"  loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+            <p>Anand Housing Society, Sahunagar Satara</p>
+                </div>
+<div class="locat1">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1324.0041106252613!2d72.83622988428762!3d19.15895065398377!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b645aa81d151%3A0xd6b8909b8313bdf8!2s229%2C%20Rd%20Number%205%2C%20Prarthana%20Society%2C%20Motilal%20Nagar%20I%2C%20Goregaon%20West%2C%20Mumbai%2C%20Maharashtra%20400104!5e0!3m2!1sen!2sin!4v1737272358339!5m2!1sen!2sin" width="250" height="150" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <p>229/1826, road no 5, motilal nagar, goregaon west , mumbai 400104</p>
+</div>
+            
+            </div>
+            
+      </div>
+      
+    </footer>
+    </div> 
+    <video autoplay muted loop id="background-video">
+      <source src="/img_data/15107275-uhd_3840_2160_30fps.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <script>
+      document.getElementById("require").addEventListener("submit", async function(event) {
+          event.preventDefault(); // Prevent default form submission
+      
+          const feedbackText = document.getElementById("story").value;
+      
+          if (!feedbackText.trim()) {
+              alert("Please enter feedback before submitting!");
+              return;
+          }
+      
+          try {
+              const response = await fetch("/require", {
+                  method: "POST",
+                  headers: {
+                      "Content-Type": "application/json"
+                  },
+                  body: JSON.stringify({ story: feedbackText })
+              });
+      
+              const result = await response.json();
+      
+              if (result.success) {
+                  alert("Feedback submitted successfully!");
+                  window.location.href = "/about"; // Redirect to the about page
+              } else {
+                  alert("Error submitting feedback: " + result.message);
+              }
+          } catch (error) {
+              console.error("Error:", error);
+              alert("Something went wrong. Please try again.");
+          }
+      });
+      </script>
+</body>
+</html>

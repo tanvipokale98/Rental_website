@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction - Cinematic Vision</title>
+    <link rel="stylesheet" href="/css/transac.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+
+    <div class="transaction-page">
+        <div class="transaction-container">
+            <h1 class="company-name">Cinematic Vision</h1>
+
+            <h2>Complete Your Transaction</h2>
+            
+            <form id="transactionForm" method="post" action="/transac">
+                <div class="form-group">
+                    <label for="total-amount"><strong>Total Amount (Rs):</strong></label>
+                    <span><%= total %></span>
+                </div>
+
+                <div class="qr-section">
+                    <h2>Pay Here</h2>
+                    <div id="qrcode"><img src="/img_data/qr_code.jpg" height="150px" width="150px"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="transact"><strong>Transaction ID:</strong></label>
+                    <input type="text" id="transact" name="transact" placeholder="Enter your transaction ID" required>
+                </div>
+
+                <div class="upload-section">
+                    <label for="receipt-upload">Upload Receipt:</label>
+        <input type="file" id="receipt-upload" name="receipt" accept="image/*" required>
+                    <p id="error-message" class="error-message"></p>
+                </div>
+                 
+                <button type="submit" id="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Generate QR Code (Replace with your payment link)
+        // new QRCode(document.getElementById("qrcode"), {
+        //     text: "https://your-payment-link.com",
+        //     width: 150,
+        //     height: 150
+        // });
+
+        // Form Validation
+        document.getElementById("transactionForm").addEventListener("submit", async function(event) {
+    event.preventDefault();
+    const form = document.getElementById("transactionForm");
+    const formData = new FormData(form);
+    
+   
+    const response = await fetch("/transac", {
+        method: "POST",
+        body: formData
+    });
+    
+    const data = await response.json();
+    if (response.ok) {
+        window.location.href = "/thankyou";
+    } else {
+        alert("Error: " + data.message);
+    }
+});
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+/* General Page Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+.text{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 60px;
+    text-align: center;
+    padding: 30px;
+    color: rgb(103, 51, 26);
+
+}
+/* Main Content */
+.main {
+    width: 90%;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Order Container */
+.order-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 45%;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* Order Details */
+.order-details {
+    /* flex: 1; */
+    padding: 10px;
+}
+
+
+
+/* Button Styling */
+button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #008CBA;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    background-color: #005f73;
+}
+.merge{
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    gap: 200px;
+}
