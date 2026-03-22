@@ -66,6 +66,7 @@ npm start
 
 ## 👩‍💻 Author
 
-**Tanvi Pokale**
+**Tanvi Pokale** <br>
+**Aaradhya Pawar**
 
 ---
