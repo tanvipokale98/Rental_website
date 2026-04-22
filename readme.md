@@ -62,11 +62,6 @@ npm start
 2. Import the provided SQL schema file
 3. Update your connection settings in the config file
 
----
 
-## 👩‍💻 Author
-
-**Tanvi Pokale** <br>
-**Aaradhya Pawar**
 
 ---
